@@ -173,7 +173,7 @@ Response:
 - Status: 200 OK
 - Description: Returns a JSON response with the user and JWT tokens (token and refreshToken) on successful access to the account after resetting the password.
 
-### refreshToken API:
+## refreshToken API:
 - Endpoint: /api/refreshToken
 - HTTP Method: GET
 - Description: This API is used to refresh the access token. It expects the refreshToken in the request header. The API verifies the refreshToken, finds the user based on the decoded _id from the refreshToken, and then creates a new JWT token (token) for authentication.
