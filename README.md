@@ -59,7 +59,9 @@ Response:
 Response:
 - Status: 200 OK
 - Description: Returns the updated user object after removing the adId from the user's wishlist. The password and resetCode fields are removed from the response.
+  
 ### contactSeller API:
+
 - Endpoint: /api/contactSeller
 - HTTP Method: POST
 - Description: This API is used to send a customer enquiry email to the seller of an ad. It expects the name, email, message, phone, and adId of the ad in the request body.
