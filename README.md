@@ -31,7 +31,7 @@
 - Status: 200 OK
 - Description: Returns a JSON response with two arrays: adsforRent (containing 12 ads with action "Rent") and adsforSell (containing 12 ads with action "Sell"). Each ad object in the arrays excludes the Key, key, and ETag properties of the photos field.
 
-### read API:
+## read API:
 - Endpoint: /api/read/:slug
 - HTTP Method: GET
 - Description: This API fetches the details of a single ad based on its slug value and populates the postedBy field with specific user data (name, username, email, phone, company, and photo.Location).
