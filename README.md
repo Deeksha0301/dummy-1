@@ -37,10 +37,12 @@
 - Description: This API fetches the details of a single ad based on its slug value and populates the postedBy field with specific user data (name, username, email, phone, company, and photo.Location).
 ### Request:
 - slug (URL parameter): The unique identifier of the ad.
-Response:
+#### Response:
 - Status: 200 OK
 - Description: Returns a JSON response with the detailed information of the requested ad, including the related ads that have similar action, type, and address (up to 3 related ads). The photo-related properties are excluded from the response.
-addToWishlist API:
+
+## addToWishlist API:
+
 - Endpoint: /api/addToWishlist
 - HTTP Method: POST
 - Description: This API is used to add an ad to the wishlist of a user. It expects the adId of the ad to be added in the request body.
@@ -50,7 +52,9 @@ addToWishlist API:
 Response:
 - Status: 200 OK
 - Description: Returns the updated user object after adding the adId to the user's wishlist. The password and resetCode fields are removed from the response.
+  
 ## removeFromWishlist API:
+
 - Endpoint: /api/removeFromWishlist/:adId
 - HTTP Method: POST
 - Description: This API is used to remove an ad from the wishlist of a user. It expects the adId of the ad to be removed as a URL parameter.
@@ -60,7 +64,7 @@ Response:
 - Status: 200 OK
 - Description: Returns the updated user object after removing the adId from the user's wishlist. The password and resetCode fields are removed from the response.
   
-### contactSeller API:
+## contactSeller API:
 
 - Endpoint: /api/contactSeller
 - HTTP Method: POST
