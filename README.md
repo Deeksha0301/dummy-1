@@ -6,19 +6,35 @@
 
 - Endpoint: /api/uploadImage
 - HTTP Method: POST
-- Description: This API allows users to upload images to the server. The image data is provided as a base64-encoded string in the - -request body. The API then processes the image data, saves it to an AWS S3 bucket, and returns the URL of the uploaded image in the response. The uploaded image is publicly accessible due to the ACL: "public-read" setting.
+- Description: This API is used to upload an image to an AWS S3 bucket. The image is provided in the request body as a base64-encoded string. The API extracts the image data, generates a unique key using nanoid, and then uploads the image to the specified S3 bucket.
+
+### Request:
+- image (Request body): Base64-encoded image data.
+### Response:
+- Status: 200 OK (on successful upload)
+- Description: Returns the S3 bucket upload response data as a JSON object. If there is an error during the upload process, the API logs the error and sends a status of 400 Bad Request.
 
 ## removeImage API:
 
 - Endpoint: /api/removeImage
 - HTTP Method: POST
-- Description: This API is used to remove an image from the AWS S3 bucket. The API expects the Key and Bucket parameters in the - -request body, which specify the location of the image in the S3 bucket. If the image is successfully removed, the API returns { ok: true }.
+- Description: This API is used to remove an image from an AWS S3 bucket. It expects the Key and Bucket of the image to be deleted in the request body.
+### Request:
+- Key (Request body): The key of the image in the S3 bucket.
+- Bucket (Request body): The name of the S3 bucket.
+### Response:
+- Status: 200 OK (on successful removal)
+- Description: Returns { ok: true } as a JSON response if the image is successfully deleted from the S3 bucket. If there is an error during the removal process, the API logs the error and sends a status of 403 Forbidden.
 
 ## create API:
-
 - Endpoint: /api/create
 - HTTP Method: POST
-- Description: This API is used to create a new ad entry in the database. It expects various parameters, such as photos, description, title, address, price, type, and landsize, in the request body. The API creates a new Ad document using the Mongoose model, populates some fields, such as postedBy, and generates a unique slug for the ad. It also updates the user's role to "Seller" and returns the created ad and updated user data in the response.
+- Description: This API is used to create a new ad. It expects various properties related to the ad, such as photos, description, title, address, price, type, and landsize. Before creating the ad, the API performs validations to check if all the required properties are provided.
+### Request:
+- Various properties (Request body): The properties required to create a new ad.
+### Response:
+- Status: 200 OK (on successful ad creation)
+- Description: Returns a JSON response with the newly created ad and the user who posted the ad. The password and resetCode fields of the user are removed from the response.
 
 ## ads API:
 
