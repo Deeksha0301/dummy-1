@@ -108,3 +108,146 @@ Response:
 ### Response:
 - Status: 200 OK
 - Description: Returns a JSON response with an array of ads created by the user and the total number of ads owned by the user.
+
+# auth.js
+
+## welcome API:
+- Endpoint: /api/welcome
+- HTTP Method: GET
+- Description: This API is used to send a welcome message from the server controller. It returns a JSON object with the message "hi from server controller".
+### Response:
+- Status: 200 OK
+- Description: Returns a JSON response with the message "hi from server controller".
+
+## preRegister API:
+- Endpoint: /api/preRegister
+- HTTP Method: POST
+- Description: This API is used for pre-registration. It expects an email and password in the request body. The API performs various validations on the email and password and then sends an email with an activation link to the provided email.
+### Request:
+- email (Request body): The email of the user for pre-registration.
+- password (Request body): The password of the user for pre-registration.
+### Response:
+- Status: 200 OK
+- Description: Returns { ok: true } as a JSON response if the pre-registration email is successfully sent. If there is an error - - during the email sending process, the API logs the error and returns { ok: false }.
+
+## register API:
+- Endpoint: /api/register
+- HTTP Method: POST
+- Description: This API is used for registration. It expects a token (received via email during pre-registration) in the request body. The API verifies the token, extracts the email and password, and then creates a new user with the provided email and password.
+### Request:
+- token (Request body): The token received during pre-registration.
+### Response:
+- Status: 200 OK
+- Description: Returns a JSON response with a newly created user and JWT tokens (token and refreshToken) for authentication - purposes.
+
+## login API:
+- Endpoint: /api/login
+
+- HTTP Method: POST
+
+- Description: This API is used for user login. It expects an email and password in the request body. The API finds the user based on the provided email, verifies the password, and then creates JWT tokens (token and refreshToken) for authentication.
+### Request:
+- email (Request body): The email of the user for login.
+- password (Request body): The password of the user for login.
+### Response:
+- Status: 200 OK
+- Description: Returns a JSON response with the user and JWT tokens (token and refreshToken) on successful login. If the user is not found or the password is incorrect, appropriate error messages are returned.
+
+## forgotPassword API:
+- Endpoint: /api/forgotPassword
+- HTTP Method: POST
+- Description: This API is used when a user forgets their password. It expects the user's email in the request body. The API finds the user based on the provided email, generates a resetCode (used for resetting the password), and sends an email to the user with a link for password reset.
+### Request:
+- email (Request body): The email of the user for password reset.
+### Response:
+- Status: 200 OK
+- Description: Returns { ok: true } as a JSON response if the password reset email is successfully sent. If there is an error during the email sending process or the user is not found, appropriate error messages are returned.
+
+## accessAccount API:
+- Endpoint: /api/accessAccount
+- HTTP Method: POST
+- Description: This API is used to access a user account after resetting the password. It expects a resetCode (received via email during the password reset process) in the request body. The API verifies the resetCode, finds the user based on the resetCode, and then creates JWT tokens (token and refreshToken) for authentication.
+### Request:
+- resetCode (Request body): The resetCode received during the password reset process.
+### Response:
+- Status: 200 OK
+- Description: Returns a JSON response with the user and JWT tokens (token and refreshToken) on successful access to the account after resetting the password.
+
+### refreshToken API:
+- Endpoint: /api/refreshToken
+- HTTP Method: GET
+- Description: This API is used to refresh the access token. It expects the refreshToken in the request header. The API verifies the refreshToken, finds the user based on the decoded _id from the refreshToken, and then creates a new JWT token (token) for authentication.
+### Request:
+- refreshToken (Request header): The refreshToken received during login or registration.
+### Response:
+- Status: 200 OK
+- Description: Returns a JSON response with the new token on successful token refresh. If the refreshToken is invalid or expired, appropriate error messages are returned with a status of 403 Forbidden.
+
+## currentUser API:
+- Endpoint: /api/currentUser
+- HTTP Method: GET
+- Description: This API is used to get the current user's profile. It expects the user's JWT token in the request header for authentication. The API finds the user based on the decoded _id from the token and returns the user's profile data.
+### Request:
+- Authorization (Request header): The JWT token for authentication.
+### Response:
+- Status: 200 OK
+- Description: Returns a JSON response with the current user's profile data. The user's password and resetCode are removed from the response.
+
+## publicProfile API:
+- Endpoint: /api/publicProfile/:username
+- HTTP Method: GET
+- Description: This API is used to get the public profile of a user based on their username. It expects the username as a URL parameter. The API finds the user based on the provided username and returns their public profile data.
+### Request:
+- username (URL parameter): The username of the user whose public profile is requested.
+### Response:
+- Status: 200 OK
+- Description: Returns a JSON response with the user's public profile data. The user's password and resetCode are removed from the response.
+
+## updatePassword API:
+- Endpoint: /api/updatePassword
+- HTTP Method: POST
+- Description: This API is used to update the current user's password. It expects the new password in the request body. The API finds the user based on the authenticated JWT token and updates their password.
+### Request:
+- password (Request body): The new password to be updated.
+### Response:
+- Status: 200 OK
+- Description: Returns { ok: true } as a JSON response on successful password update. If the password is not provided or does not meet the required criteria, appropriate error messages are returned with a status of 403 Forbidden.
+
+## updateProfile API:
+- Endpoint: /api/updateProfile
+- HTTP Method: POST
+- Description: This API is used to update the current user's profile. It expects various user profile data in the request body. The API finds the user based on the authenticated JWT token and updates their profile data.
+### Request:
+- Various profile data (Request body): The updated user profile data.
+### Response:
+- Status: 200 OK
+- Description: Returns a JSON response with the updated user profile data. The user's password and resetCode are removed from the response. If there is an error during the update, such as a duplicate username or email, appropriate error messages are returned.
+
+## agents API:
+- Endpoint: /api/agents
+- HTTP Method: GET
+- Description: This API is used to get a list of all agents. It finds all users with the role "Seller" and returns their profile data.
+### Response:
+- Status: 200 OK
+- Description: Returns a JSON response with the list of agent profiles. The users' passwords and other sensitive data are removed from the response.
+
+## agentAdCount API:
+- Endpoint: /api/agentAdCount/:_id
+- HTTP Method: GET
+- Description: This API is used to get the count of ads posted by a specific agent. It expects the agent's _id as a URL parameter. The API finds all ads posted by the agent and returns the count.
+### Request:
+- _id (URL parameter): The _id of the agent whose ad count is requested.
+### Response:
+-Status: 200 OK
+-Description: Returns a JSON response with the count of ads posted by the agent.
+
+## agent API:
+- Endpoint: /api/agent/:username
+- HTTP Method: GET
+- Description: This API is used to get the public profile and ads posted by a specific agent. It expects the agent's username as a URL parameter. The API finds the agent based on the provided username, returns their public profile data, and also returns all ads posted by the agent.
+
+### Request:
+-username (URL parameter): The username of the agent whose public profile and ads are requested.
+### Response:
+-Status: 200 OK
+-Description: Returns a JSON response with the agent's public profile data and a list of ads posted by the agent. The users' -passwords and other sensitive data are removed from the response.
