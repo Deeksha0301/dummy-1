@@ -1,8 +1,5 @@
 # dummy-1
- <img src="https://github.com/Deeksha0301/dummy-1/assets/92042650/faccab58-fbf9-4fc6-9490-3d8c9db1b1a6" 
-         alt="GIF Image" 
-         width="1000" 
-         height="600">
+
 
 
 ![p9](https://github.com/Deeksha0301/dummy-1/assets/92042650/8deac337-36fe-4df4-b9b1-655e232dd405)
