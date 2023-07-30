@@ -1,7 +1,4 @@
 # dummy-1
-![p4](https://github.com/Deeksha0301/dummy-1/assets/92042650/1cd9403e-f110-4076-aad4-42bccd049ee3)
-
-
 ## Non-logged In user
 ![p9](https://github.com/Deeksha0301/dummy-1/assets/92042650/8deac337-36fe-4df4-b9b1-655e232dd405)
 
