@@ -1,8 +1,9 @@
 # dummy-1
 
+## Non-logged In user
 ![p9](https://github.com/Deeksha0301/dummy-1/assets/92042650/8deac337-36fe-4df4-b9b1-655e232dd405)
 
-
+## Logged In User
 ![pppp](https://github.com/Deeksha0301/dummy-1/assets/92042650/dfcafb1f-7799-4ed7-94c0-30a404dc982c)
 
 # Backend Server Documentation
