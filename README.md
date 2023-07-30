@@ -1,7 +1,8 @@
 # dummy-1
 
-![p1](https://github.com/Deeksha0301/dummy-1/assets/92042650/a2447e00-3795-46c1-83e2-ea0f2b59b58a)
 
+
+![p2](https://github.com/Deeksha0301/dummy-1/assets/92042650/c813a32d-ab88-44d1-a95c-41d00f64d08b)
 
 
 
