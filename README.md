@@ -2,7 +2,7 @@
  <img src="https://github.com/Deeksha0301/dummy-1/assets/92042650/90b0ff36-f789-478d-af59-a16548e695e2.gif" 
          alt="GIF Image" 
          width="1000" 
-         height="700">
+         height="600">
 
 
 ![p9](https://github.com/Deeksha0301/dummy-1/assets/92042650/8deac337-36fe-4df4-b9b1-655e232dd405)
