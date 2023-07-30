@@ -1,5 +1,5 @@
 # dummy-1
- <img src="![non_user](https://github.com/Deeksha0301/dummy-1/assets/92042650/faccab58-fbf9-4fc6-9490-3d8c9db1b1a6)" 
+ <img src="https://github.com/Deeksha0301/dummy-1/assets/92042650/faccab58-fbf9-4fc6-9490-3d8c9db1b1a6" 
          alt="GIF Image" 
          width="1000" 
          height="600">
