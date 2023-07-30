@@ -1,18 +1,20 @@
 # dummy-1
 
-
-![p7](https://github.com/Deeksha0301/dummy-1/assets/92042650/cdd7b9ce-9082-42c9-a96e-6fe731e9295b)
-
-
-
 ![p9](https://github.com/Deeksha0301/dummy-1/assets/92042650/8deac337-36fe-4df4-b9b1-655e232dd405)
 
 
-
-
-
-
 ![pppp](https://github.com/Deeksha0301/dummy-1/assets/92042650/dfcafb1f-7799-4ed7-94c0-30a404dc982c)
+
+# Backend Server Documentation
+This documentation provides an overview of the backend server code and its functionalities.
+
+### Setup and Configuration
+- The backend server is built using Express.js, a Node.js web application framework.
+- MongoDB is used as the database, and the connection URL is specified in the .env file using the DB_URL environment variable.
+- Cross-Origin Resource Sharing (CORS) is enabled to allow cross-origin requests.
+
+### API Endpoints
+This documentation provides information about the User API endpoints and their usage.
 
 # ad.js
 
