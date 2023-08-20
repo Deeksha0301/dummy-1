@@ -271,3 +271,7 @@ Response:
 ### Response:
 -Status: 200 OK
 -Description: Returns a JSON response with the agent's public profile data and a list of ads posted by the agent. The users' -passwords and other sensitive data are removed from the response.
+
+
+![Untitled video - Made with Clipchamp (17)](https://github.com/Deeksha0301/dummy-1/assets/92042650/09dc85b8-0892-473e-a66c-aa63f02264ca)
+
